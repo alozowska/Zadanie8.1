@@ -21,17 +21,14 @@ public class Car extends Vehicle {
     public void wylacz() {
         airConditioning = false;
     }
-
-    public double obliczZasiegCar() {
-        double zasieg = 0;
-        if (airConditioning == true) {
-            return zasieg = (getTank() / (getFuelConsumption() + 0.8))*100;
-        } else if (airConditioning == false) {
-            return zasieg = (getTank() / getFuelConsumption())*100;
+@Override
+    public double obliczZasieg() {
+        if (airConditioning) {
+            return  (getTank() / (getFuelConsumption() + 0.8))*100;
+        } else {
+            return super.obliczZasieg();
         }
-        return zasieg;
     }
-
     public void info() {
         super.info();
         System.out.print(airConditioning+" ");

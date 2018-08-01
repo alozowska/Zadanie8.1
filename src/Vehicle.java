@@ -32,6 +32,9 @@ public class Vehicle {
     public void setFuelConsumption(double fuelConsumption) {
         this.fuelConsumption = fuelConsumption;
     }
+    public double obliczZasieg(){
+        return tank/fuelConsumption*100;
+    }
     public void info(){
         System.out.print(name+ " "+tank+" "+fuelConsumption+" ");
     }

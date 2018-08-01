@@ -14,19 +14,18 @@ public class Truck extends Car {
         this.loading = loading;
     }
 
-    public double obliczZasiegTruck() {
-        double zasieg = 0;
+    public double obliczZasieg() {
         if (loading != 0) {
-            if (isAirConditioning() == true) {
-                return zasieg = getTank() / (getFuelConsumption() + 1.6 + loading * 0.5 / 100);
+            if (isAirConditioning()) {
+                return  getTank() / (getFuelConsumption() + 1.6 + loading * 0.5/100 )*100;
             } else {
-                return zasieg = getTank() / (getFuelConsumption() + loading * 0.5 / 100);
+                return getTank() / (getFuelConsumption() + loading * 0.5/100 )*100;
             }
         } else {
-            if (isAirConditioning() == true) {
-                return zasieg = getTank() / (getFuelConsumption() + 1.6);
+            if (isAirConditioning()) {
+                return  getTank() / (getFuelConsumption() + 1.6)*100;
             } else {
-                return zasieg = getTank() / getFuelConsumption();
+                return  super.obliczZasieg();
             }
         }
     }
